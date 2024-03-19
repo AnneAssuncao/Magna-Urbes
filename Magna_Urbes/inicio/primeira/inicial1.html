@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>pag. inicial1</title> 
+    <meta name="viewport" content="initial-scale=1.0">  
+    <style type="text/css">
+     button{
+        font-size: 18px;
+        font-weight: 600;
+        background-color: white;
+        border-radius: 20px;
+        border: 1;
+        border-color: #9596eb;
+        padding: 10px 60px; 
+        position:absolute;
+        top:140%;
+        left:45%;
+        z-index:1;
+        }
+    .img-incio{
+        position:relative;
+        text-align:center;
+    }
+    </style>
+</head>
+<body bgcolor="black">
+    <div class="img-inicio">
+    <img src="pg_inicio.png" height="900" width="1350"/>
+    <center><button id="iniciarBtn">INICIAR</button></center>
+    </div>
+    <script>
+     
+        document.getElementById("iniciarBtn").addEventListener("click", function() {
+            window.location.href = "segunda/segunda_pag.html";
+        });
+    </script>
+</body>
+</html>

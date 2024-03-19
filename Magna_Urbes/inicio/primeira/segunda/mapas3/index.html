@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>MAPA-Idade Média</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/map.css">
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCX7ilV1XxhiefgqVUHBSDprBX0eMWwza0&callback=initMap" async defer></script>
+</head>
+<body>
+    <select id="seculos" name="seculos">
+        <option value="1">Século XVI d.C</option>
+        <option value="2">Século XVII d.C</option>
+        <option value="3">Século XVIII d.C</option>
+    </select>
+    <h1 class="titulo">MAGNA URBES</h1>
+    <div id="map"></div>
+    
+    <center><button class="butao" id="iniciarBtnn">Voltar</button></center>
+
+    <script>
+        document.getElementById("seculos").addEventListener("change", function() {
+            var selectedCentury = document.getElementById("seculos").value;
+            var existingScript = document.getElementById("dynamicScript");
+            
+            if (existingScript) {
+                existingScript.parentNode.removeChild(existingScript);
+            }
+
+            var script = document.createElement('script');
+            script.id = "dynamicScript";
+            script.type = 'text/javascript';
+            script.src = 'js/sec'+selectedCentury+'.js';
+
+            // Adiciona a chamada para a função initMap ao final do script dinâmico
+            script.onload = function() {
+                initMap();
+            };
+            
+            document.body.appendChild(script);
+        });
+
+        document.getElementById("iniciarBtnn").addEventListener("click", function() {
+            window.location.href = "segunda/segunda_pag.html";
+        });
+    </script>
+</body>
+</html>

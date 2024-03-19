@@ -1,0 +1,59 @@
+h1 {
+    color: #ffffff;
+    font-family: Trebuchet MS;
+    position: absolute;
+    top:5px; 
+   text-align: center;
+}
+
+.seta {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.seta-esquerda {
+    border-left: 10px solid transparent;
+    border-right: 20px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    left: 20px;
+}
+
+.seta-direita {
+    border-left: 20px solid white;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    right: 20px;
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 75px;
+}
+.carrosel{
+    box-shadow: 2px 2px 4px black;
+    overflow: hidden;
+    height: 700px;
+    width: 1100px;
+}
+.conteiner{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+    position: relative;
+}
+img{
+    object-fit: cover;
+    width: 1100px;
+    height: 700px;
+}
